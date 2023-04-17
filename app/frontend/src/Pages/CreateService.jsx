@@ -1,53 +1,154 @@
 import React from "react";
 import Header from "../Components/Header";
+import qrcode from "../images/qrcode.svg";
 
 class CreateService extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      customerName: '',
+      customerCPF: '',
+      customerPhone: '',
+      customerEmail: '',
+      vehicleModel: '',
+      vehicleColor: '',
+      vehiclePlate: '',
+      employeeName: '',
+      employeeCode: '',
+      isQrCodeHidden: false,
+    }
+  }
+  
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ isQrCodeHidden: true })
+    }, 7000)
+  }
+
+  handleChange = ({ target }) => {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({ [name]: value });
+  };
+
+  startService = () => {
+    window.location.replace('/service/2')
+  };
+
   render() {
+    const {
+      customerName,
+      customerCPF,
+      customerPhone,
+      customerEmail,
+      vehicleModel,
+      vehicleColor,
+      vehiclePlate,
+      employeeName,
+      employeeCode,
+      isQrCodeHidden
+    } = this.state;
     return (
       <main>
         <Header />
+        <img src={ qrcode } hidden={ isQrCodeHidden } alt="qrcode para informações do cliente" />
         <h2>Preencha as informações abaixo</h2>
         <form>
           <fieldset>
             <legend>Dados do Cliente</legend>
 
-            <label for="nomeCliente" >Nome:</label>
-            <input type="text" name="nomeCliente" id="nomeCliente"/>
+            <label htmlFor="customerName" >Nome:</label>
+            <input 
+              type="text" 
+              name="customerName" 
+              id="customerName"
+              value={ customerName }
+              onChange={ this.handleChange }
+            />
 
-            <label for="cpfCliente" >CPF:</label>
-            <input type="text" name="cpfCliente" id="cpfCliente"/>
+            <label htmlFor="customerCPF" >CPF:</label>
+            <input 
+              type="text" 
+              name="customerCPF" 
+              id="customerCPF"
+              value={ customerCPF }
+              onChange={ this.handleChange }
+            />
 
-            <label for="telefoneCliente" >Telefone:</label>
-            <input type="text" name="telefoneCliente" id="telefoneCliente"/>
+            <label htmlFor="customerPhone" >Telefone:</label>
+            <input 
+              type="text" 
+              name="customerPhone" 
+              id="customerPhone"
+              value={ customerPhone }
+              onChange={ this.handleChange }
+            />
 
-            <label for="emailCliente" >Email:</label>
-            <input type="text" name="emailCliente" id="emailCliente"/>
+            <label htmlFor="customerEmail" >Email:</label>
+            <input 
+              type="text" 
+              name="customerEmail" 
+              id="customerEmail"
+              value={ customerEmail }
+              onChange={ this.handleChange }
+            />
             
           </fieldset>
           <fieldset>
             <legend>Dados do Veículo</legend>
 
-            <label for="modeloVeiculo" >Modelo:</label>
-            <input type="text" name="modeloVeiculo" id="modeloVeiculo"/>
+            <label htmlFor="vehicleModel" >Modelo:</label>
+            <input 
+              type="text" 
+              name="vehicleModel" 
+              id="vehicleModel"
+              value={ vehicleModel }
+              onChange={ this.handleChange }
+            />
 
-            <label for="corVeiculo" >Cor:</label>
-            <input type="text" name="corVeiculo" id="corVeiculo"/>
+            <label htmlFor="vehicleColor" >Cor:</label>
+            <input 
+              type="text" 
+              name="vehicleColor" 
+              id="vehicleColor"
+              value={ vehicleColor }
+              onChange={ this.handleChange }
+            />
 
-            <label for="placaCliente" >Placa:</label>
-            <input type="text" name="placaCliente" id="placaCliente"/>
+            <label htmlFor="vehiclePlate" >Placa:</label>
+            <input 
+              type="text" 
+              name="vehiclePlate" 
+              id="vehiclePlate"
+              value={ vehiclePlate }
+              onChange={ this.handleChange }
+            />
 
           </fieldset>
           <fieldset>
             <legend>Dados do Colaborador</legend>
 
-            <label for="nomeColaborador" >Nome:</label>
-            <input type="text" name="nomeColaborador" id="nomeColaborador"/>
+            <label htmlFor="employeeName" >Nome:</label>
+            <input 
+              type="text" 
+              name="employeeName" 
+              id="employeeName"
+              value={ employeeName }
+              onChange={ this.handleChange }
+            />
 
-            <label for="codigoColaborador" >Codigo:</label>
-            <input type="text" name="codigoColaborador" id="codigoColaborador"/>
+            <label htmlFor="employeeCode" >Codigo:</label>
+            <input 
+              type="text" 
+              name="employeeCode" 
+              id="employeeCode"
+              value={ employeeCode }
+              onChange={ this.handleChange }
+            />
+
           </fieldset>
 
-          <button>Iniciar Serviço</button>
+          <button type="button" onClick={ this.startService }>Iniciar Serviço</button>
         </form>
       </main>
     );
