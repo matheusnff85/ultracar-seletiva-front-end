@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Components/Header";
 import qrcode from "../images/qrcode.svg";
+import { customers } from "../mocks/mockCustomers";
 
 class CreateService extends React.Component {
   constructor() {
@@ -20,9 +21,20 @@ class CreateService extends React.Component {
   }
   
   componentDidMount() {
+    const customerInfos = customers[Math.floor(Math.random() * customers.length)];
     setTimeout(() => {
-      this.setState({ isQrCodeHidden: true })
-    }, 7000)
+      this.setState({
+        customerName: customerInfos.customerName,
+        customerCPF: customerInfos.customerCPF,
+        customerPhone: customerInfos.customerPhone,
+        customerEmail: customerInfos.customerEmail,
+        vehicleModel: customerInfos.vehicleModel,
+        vehicleColor: customerInfos.vehicleColor,
+        vehiclePlate: customerInfos.vehiclePlate,
+        isQrCodeHidden: true,
+
+      });
+    }, 5000)
   }
 
   handleChange = ({ target }) => {
@@ -32,7 +44,8 @@ class CreateService extends React.Component {
   };
 
   startService = () => {
-    window.location.replace('/service/2')
+    const { vehiclePlate } = this.state;
+    window.location.replace(`/service/${vehiclePlate}`)
   };
 
   render() {
@@ -77,7 +90,7 @@ class CreateService extends React.Component {
 
             <label htmlFor="customerPhone" >Telefone:</label>
             <input 
-              type="text" 
+              type="text"
               name="customerPhone" 
               id="customerPhone"
               value={ customerPhone }
