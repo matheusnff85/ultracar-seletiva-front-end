@@ -1,0 +1,33 @@
+.headerContainer {
+  background-color: var(--main-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 12vh;
+}
+
+.headerLogo {
+  max-height: 10vh;
+  max-width: 100%;
+  margin-left: 1vw;
+}
+
+.headerLink:hover {
+  color: var(--main-red);
+  cursor: pointer;
+  transition: .3s ease-in;
+}
+
+.headerLink {
+  color: var(--main-white);
+  font-size: 4vh;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 2vw;
+}
+
+.headerTitle {
+  color: var(--main-white);
+  font-size: 10vh;
+}
