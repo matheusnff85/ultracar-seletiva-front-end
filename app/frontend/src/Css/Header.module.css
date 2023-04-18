@@ -18,7 +18,8 @@
 .headerLink:hover {
   color: var(--main-red);
   cursor: pointer;
-  transition: .3s ease-in;
+  transition: .5s ease-in;
+  font-size: 4.6vh;
 }
 
 .headerLink {
@@ -30,6 +31,10 @@
 }
 
 .headerTitle {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: var(--main-white);
   font-size: 10vh;
 }

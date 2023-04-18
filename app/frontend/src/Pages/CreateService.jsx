@@ -67,6 +67,7 @@ class CreateService extends React.Component {
       employeeCode,
       isQrCodeHidden,
     } = this.state;
+    const startServiceBtnStatus = (employeeName.length > 0) && (employeeCode.length > 0) ? false : true;
     return (
       <main>
         <Header />
@@ -78,103 +79,128 @@ class CreateService extends React.Component {
             className={ styled.qrcodeImg }
           />
         </div>
-        <h2>Preencha as informações abaixo</h2>
-        <form>
-          <fieldset>
-            <legend>Dados do Cliente</legend>
+        <h2 className={ styled.createServiceSubTitle }>Preencha as informações abaixo</h2>
+        <form className={ styled.createServiceForm }>
+          <fieldset className={ styled.createServiceFormFieldset }>
+            <legend className={ styled.fieldsetLegend }>Dados do Cliente</legend>
 
-            <label htmlFor='customerName' >Nome:</label>
-            <input 
-              type='text' 
-              name='customerName' 
-              id='customerName'
-              value={ customerName }
-              onChange={ this.handleChange }
-            />
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='customerName' >Nome:</label>
+              <input 
+                type='text' 
+                name='customerName' 
+                id='customerName'
+                value={ customerName }
+                onChange={ this.handleChange }
+              />
+            </div>
 
-            <label htmlFor='customerCPF' >CPF:</label>
-            <input 
-              type='text' 
-              name='customerCPF' 
-              id='customerCPF'
-              value={ customerCPF }
-              onChange={ this.handleChange }
-            />
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='customerCPF' >CPF:</label>
+              <input 
+                type='text' 
+                name='customerCPF' 
+                id='customerCPF'
+                value={ customerCPF }
+                onChange={ this.handleChange }
+              />
+            </div>
 
-            <label htmlFor='customerPhone' >Telefone:</label>
-            <input 
-              type='text'
-              name='customerPhone' 
-              id='customerPhone'
-              value={ customerPhone }
-              onChange={ this.handleChange }
-            />
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='customerPhone' >Telefone:</label>
+              <input 
+                type='text'
+                name='customerPhone' 
+                id='customerPhone'
+                value={ customerPhone }
+                onChange={ this.handleChange }
+              />
+            </div>
 
-            <label htmlFor='customerEmail' >Email:</label>
-            <input 
-              type='text' 
-              name='customerEmail' 
-              id='customerEmail'
-              value={ customerEmail }
-              onChange={ this.handleChange }
-            />
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='customerEmail' >Email:</label>
+              <input 
+                type='text' 
+                name='customerEmail' 
+                id='customerEmail'
+                value={ customerEmail }
+                onChange={ this.handleChange }
+              />
+            </div>
             
           </fieldset>
-          <fieldset>
-            <legend>Dados do Veículo</legend>
+          <fieldset className={ styled.createServiceFormFieldset }>
+            <legend className={ styled.fieldsetLegend }>Dados do Veículo</legend>
 
-            <label htmlFor='vehicleModel' >Modelo:</label>
-            <input 
-              type='text' 
-              name='vehicleModel' 
-              id='vehicleModel'
-              value={ vehicleModel }
-              onChange={ this.handleChange }
-            />
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='vehicleModel' >Modelo:</label>
+              <input 
+                type='text' 
+                name='vehicleModel' 
+                id='vehicleModel'
+                value={ vehicleModel }
+                onChange={ this.handleChange }
+              />
+            </div>
 
-            <label htmlFor='vehicleColor' >Cor:</label>
-            <input 
-              type='text' 
-              name='vehicleColor' 
-              id='vehicleColor'
-              value={ vehicleColor }
-              onChange={ this.handleChange }
-            />
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='vehicleColor' >Cor:</label>
+              <input 
+                type='text' 
+                name='vehicleColor' 
+                id='vehicleColor'
+                value={ vehicleColor }
+                onChange={ this.handleChange }
+              />
+            </div>
 
-            <label htmlFor='vehiclePlate' >Placa:</label>
-            <input 
-              type='text' 
-              name='vehiclePlate' 
-              id='vehiclePlate'
-              value={ vehiclePlate }
-              onChange={ this.handleChange }
-            />
-
-          </fieldset>
-          <fieldset>
-            <legend>Dados do Colaborador</legend>
-
-            <label htmlFor='employeeName' >Nome:</label>
-            <input 
-              type='text' 
-              name='employeeName' 
-              id='employeeName'
-              value={ employeeName }
-              onChange={ this.handleChange }
-            />
-
-            <label htmlFor='employeeCode' >Codigo:</label>
-            <input 
-              type='text' 
-              name='employeeCode' 
-              id='employeeCode'
-              value={ employeeCode }
-              onChange={ this.handleChange }
-            />
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='vehiclePlate' >Placa:</label>
+              <input 
+                type='text' 
+                name='vehiclePlate' 
+                id='vehiclePlate'
+                value={ vehiclePlate }
+                onChange={ this.handleChange }
+              />
+            </div>
 
           </fieldset>
+          <fieldset className={ styled.createServiceFormFieldset }>
+            <legend className={ styled.fieldsetLegend }>Dados do Colaborador</legend>
 
-          <button type='button' onClick={ this.startService }>Iniciar Serviço</button>
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='employeeName' >Nome:</label>
+              <input 
+                type='text' 
+                name='employeeName' 
+                id='employeeName'
+                value={ employeeName }
+                onChange={ this.handleChange }
+              />
+            </div>
+
+            <div className={ styled.fieldsetDiv }>
+              <label htmlFor='employeeCode' >Codigo:</label>
+              <input 
+                type='text' 
+                name='employeeCode' 
+                id='employeeCode'
+                value={ employeeCode }
+                onChange={ this.handleChange }
+              />
+            </div>
+
+          </fieldset>
+
+          <button
+            type='button'
+            onClick={ this.startService }
+            className={ styled.createServiceFormBtn }
+            disabled={ startServiceBtnStatus }
+          >
+            Iniciar Serviço
+          </button>
         </form>
       </main>
     );
