@@ -15,7 +15,7 @@ class CurrentService extends React.Component {
       employeeName: '',
       employeeCode: 0,
       partSelectedId: 'null',
-      partSelectedName: '',
+      partSelectedName: 'Peça não utilizada',
       taskDescription: '',
       taskValue: 0,
       tasksConclued: [],
@@ -53,7 +53,7 @@ class CurrentService extends React.Component {
     } else {
       this.setState({
         partSelectedId: 'null',
-        partSelectedName: '',
+        partSelectedName: 'Peça não utilizada',
         taskValue: 0,
       });
     }
@@ -64,7 +64,7 @@ class CurrentService extends React.Component {
     tasksConclued.push(newTask);
     this.setState({
       tasksConclued,
-      totalValue: totalValue + newTask.taskValue,
+      totalValue: totalValue + Number(newTask.taskValue),
       taskDescription: '',
       taskValue: 0,
     });
