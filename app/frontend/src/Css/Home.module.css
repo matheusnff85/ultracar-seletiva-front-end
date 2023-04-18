@@ -1,0 +1,44 @@
+.homeMainContainer {
+  align-items: center;
+  background-color: var(--main-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.homeLogoImg {
+  max-width: 70%;
+  max-height: 80%;
+}
+
+.homeButtonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.homeButtonsContainer button:hover {
+  background: var(--main-blue);
+  margin-top: 10px;
+  transition: .3s ease-in;
+  box-shadow: 4px 4px 1rem var(--main-black);;
+}
+
+.homeButtonsContainer button {
+  background: var(--main-lightblue);
+  border: 2.5px double var(--main-lightblue);
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-size: 1.6vw;
+  padding: 20px;
+  margin: 20px;
+  width: 22vw;
+}
+
+.homeLink {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--main-white);
+}
