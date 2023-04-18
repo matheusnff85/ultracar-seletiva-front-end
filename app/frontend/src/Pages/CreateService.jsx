@@ -32,7 +32,6 @@ class CreateService extends React.Component {
         vehicleColor: customerInfos.vehicleColor,
         vehiclePlate: customerInfos.vehiclePlate,
         isQrCodeHidden: true,
-
       });
     }, 5000)
   }
@@ -45,7 +44,13 @@ class CreateService extends React.Component {
 
   startService = () => {
     const { vehiclePlate } = this.state;
-    window.location.replace(`/service/${vehiclePlate}`)
+    const simulateRequest = () => {
+      console.log(this.state);
+    };
+    simulateRequest();
+    setTimeout(() => {
+      window.location.replace(`/service/${vehiclePlate}`)
+    }, 5000)
   };
 
   render() {
