@@ -1,18 +1,18 @@
 .headerContainer {
-  background-color: var(--main-blue);
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100vw;
-  height: 12vh;
+  background-color: var(--main-blue);
   box-shadow: 0px 5px 1.2rem var(--main-black);
+  display: flex;
+  height: 12vh;
+  justify-content: space-between;
   margin-bottom: 60px;
+  width: 100vw;
 }
 
 .headerLogo {
+  margin-left: 1vw;
   max-height: 10vh;
   max-width: 100%;
-  margin-left: 1vw;
 }
 
 .headerLink:hover {
@@ -25,8 +25,8 @@
   color: var(--main-white);
   font-size: 4vh;
   font-weight: bold;
-  text-decoration: none;
   margin-right: 2vw;
+  text-decoration: none;
 }
 
 .headerTitle {

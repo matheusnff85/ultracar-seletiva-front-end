@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Components/Header.jsx';
 import qrcode from '../images/qrcode.svg';
 import customers from '../mocks/mockCustomers';
+import styled from '../Css/CreateService.module.css';
 
 class CreateService extends React.Component {
   constructor() {
@@ -69,7 +70,14 @@ class CreateService extends React.Component {
     return (
       <main>
         <Header />
-        <img src={ qrcode } hidden={ isQrCodeHidden } alt='qrcode para informações do cliente' />
+        <div className={ styled.qrcodeImgContainer } hidden={ isQrCodeHidden }>
+          <img 
+            src={ qrcode } 
+            hidden={ isQrCodeHidden } 
+            alt='qrcode para informações do cliente' 
+            className={ styled.qrcodeImg }
+          />
+        </div>
         <h2>Preencha as informações abaixo</h2>
         <form>
           <fieldset>
