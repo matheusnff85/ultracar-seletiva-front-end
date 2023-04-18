@@ -1,13 +1,23 @@
+:root {
+  --main-blue: #202B57;
+  --main-lightblue: #00A5E0;
+  --main-red: #F24236;
+  --main-green: #218A31;
+  --main-white: #FFFFFF;
+  --main-black: #0a0a0a;
+  --main-gray: #777777;
+}
+
 * {
+  box-sizing: border-box;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  box-sizing: border-box;
 }
 
 img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 body {

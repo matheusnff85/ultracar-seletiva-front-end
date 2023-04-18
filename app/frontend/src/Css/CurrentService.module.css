@@ -1,0 +1,221 @@
+.currentServiceInfosDiv {
+  align-items: center;
+  border: 3px outset var(--main-gray);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 1rem var(--main-gray);
+  display: flex;
+  flex-flow: column nowrap;
+  margin: auto;
+  margin-bottom: 15px;
+  padding: 15px;
+  text-align: center;
+  width: 30vw;
+}
+
+.customerInfosTitle {
+  font-size: 3.5vh;
+}
+
+.customerInfosList {
+  color: var(--main-black);
+  font-size: 2vh;
+  list-style: none;
+  margin: 5px;
+  padding: 5px;
+}
+
+.customerInfosList li {
+  padding: 2px;
+}
+
+.currentServiceTaskCreator {
+  align-items: center;
+  border: 2px outset var(--main-gray);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 1rem var(--main-gray);
+  display: flex;
+  flex-flow: row wrap;
+  height: 25vh;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 5vh;
+  padding: 20px;
+  width: 70vw;
+}
+
+.taskCreatorDiv {
+  align-items: center;
+  display: flex;
+  height: 7vh;
+  justify-content: center;
+  width: 22vw;
+}
+
+.taskCreatorDiv label {
+  color: var(--main-black);
+  font-size: 2.4vh;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.taskCreatorSelect {
+  color: var(--main-black);
+  background-color: lightgrey;
+  border: none;
+  border-radius: 1rem;
+  font-size: 15px;
+  padding: 2vh;
+  text-align: center;
+  width: 15vw;
+}
+
+.taskCreatorTextarea {
+  font-size: 16px;
+  height: 6vh;
+  padding: 2px;
+  text-align: center;
+  width: 16vw;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.taskCreatorValueInput {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  height: 5vh;
+  width: 10vw;
+}
+
+.taskCreatorButton:hover {
+  background-color: var(--main-lightblue);
+  box-shadow: 4px 4px 1rem var(--main-black);
+  font-size: 2vw;
+  height: 101%;
+  transition: .4s ease-in;
+  width: 26vw;
+}
+
+.taskCreatorButton {
+  background-color: var(--main-green);
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--main-white);
+  cursor: pointer;
+  font-size: 1.9vw;
+  font-weight: bold;
+  height: 6vh;
+  margin: 20px;
+  width: 20vw;
+}
+
+.currentServiceTableContainer {
+  border: 2px outset var(--main-black);
+  background-color: var(--main-white);
+  border-collapse: collapse;
+  box-shadow: 1px 1px 0.5rem var(--main-black);
+  font-size: 1rem;
+  font-family: 'Roboto Slab';
+  font-weight: normal;
+  margin: auto;
+  margin-top: 5vh;
+  max-width: 100%;
+  white-space: nowrap;
+  width: 70vw;
+}
+
+.currentServiceTableContainer td, .currentServiceTableContainer th {
+  font-size: 2.5vh;
+  padding: 5px;
+  text-align: center;
+}
+
+.currentServiceTableContainer td {
+  border-bottom: 1px solid var(--main-black);
+  border-right: 1px solid var(--main-black);
+  font-size: 0.9rem;
+}
+
+.currentServiceTableContainer thead th {
+  background: var(--main-blue);
+  border-bottom: 1px solid var(--main-black);
+  border-right: 1px solid var(--main-black);
+  color: var(--main-white);
+}
+
+.currentServiceTableContainer thead th:nth-child(odd) {
+  background: var(--main-blue);
+  color: var(--main-white);
+}
+
+.currentServiceTableContainer tbody tr:nth-child(even) {
+  background: var(--main-gray);
+  color: var(--main-white);
+}
+
+.removeTaskButton:hover {
+  background-color: #f31a0a;
+  box-shadow: 2px 2px 1rem var(--main-black);
+  font-size: 1.5vw;
+  height: 4vh;
+  transition: .4s ease-in;
+  width: 10vw;
+}
+
+.removeTaskButton {
+  background-color: var(--main-red);
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--main-white);
+  cursor: pointer;
+  font-size: 1.2vw;
+  font-weight: bold;
+  padding: 2px;
+  width: 7vw;
+}
+
+.currentServiceTotalValue {
+  border: 2px outset var(--main-gray);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 1rem var(--main-gray);
+  margin: auto;
+  margin-top: 5vh;
+  padding: 10px;
+  text-align: center;
+  width: 20vw;
+}
+
+.endServiceButtonDiv {
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  margin: auto;
+  margin-bottom: 6vh;
+  margin-top: 6vh;
+  width: 20vw;
+}
+
+.endServiceButton:hover {
+  background-color: var(--main-lightblue);
+  box-shadow: 3px 3px 1rem var(--main-black);
+  width: 21vw;
+  height: 7vh;
+  font-size: 2vw;
+  transition: .4s ease-in;
+}
+
+.endServiceButton {
+  background-color: var(--main-green);
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--main-white);
+  cursor: pointer;
+  font-size: 1.9vw;
+  font-weight: bold;
+  height: 6vh;
+  width: 20vw;
+}

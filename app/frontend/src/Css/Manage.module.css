@@ -1,0 +1,109 @@
+.manageFiltersDiv {
+  align-items: center;
+  border: 2px outset var(--main-gray);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 1rem var(--main-gray);
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 25px;
+  width: 60vw;
+}
+
+.manageFiltersDiv button:hover {
+  background-color: var(--main-blue);
+  box-shadow: 4px 4px 1rem var(--main-black);
+  width: 13vw;
+  height: 4.8vh;
+  font-size: 1.4vw;
+  transition: .5s ease-in;
+}
+
+.manageFiltersDiv button {
+  background-color: var(--main-lightblue);
+  border: none;
+  border-radius: 1rem;
+  color: var(--main-white);
+  cursor: pointer;
+  font-size: 1.2vw;
+  font-weight: bold;
+  height: 4vh;
+  width: 12vw;
+}
+
+.manageFiltersDiv select {
+  color: var(--main-black);
+  background-color: lightgrey;
+  border: none;
+  border-radius: 1rem;
+  font-size: 15px;
+  font-weight: bold;
+  height: 4vh;
+  text-align: center;
+  width: 12vw;
+}
+
+.manageTableContainer {
+  border: 2px outset var(--main-black);
+  background-color: var(--main-white);
+  border-collapse: collapse;
+  box-shadow: 1px 1px 0.5rem var(--main-black);
+  font-size: 1rem;
+  font-family: 'Roboto Slab';
+  font-weight: bolder;
+  margin: auto;
+  margin-top: 5vh;
+  max-width: 100%;
+  white-space: nowrap;
+  width: 70vw;
+}
+
+.manageTableContainer td, .manageTableContainer th {
+  font-size: 2.5vh;
+  padding: 13px;
+  text-align: center;
+}
+
+.manageTableContainer td {
+  border-bottom: 1px solid var(--main-black);
+  border-right: 1px solid var(--main-black);
+  font-size: 0.9rem;
+}
+
+.manageTableContainer thead th {
+  background: var(--main-blue);
+  border-bottom: 1px solid var(--main-black);
+  border-right: 1px solid var(--main-black);
+  color: var(--main-white);
+}
+
+.manageTableContainer thead th:nth-child(odd) {
+  background: var(--main-blue);
+  color: var(--main-white);
+}
+
+.manageTableContainer tbody tr:nth-child(even) {
+  background: var(--main-gray);
+  color: var(--main-white);
+}
+
+.manageRemoveButton:hover {
+  background-color: #f31a0a;
+  box-shadow: 2px 2px 1rem var(--main-black);
+  font-size: 1.5vw;
+  height: 4vh;
+  transition: .4s ease-in;
+  width: 10vw;
+}
+
+.manageRemoveButton {
+  background-color: var(--main-red);
+  border: none;
+  border-radius: 1.5rem;
+  color: var(--main-white);
+  cursor: pointer;
+  font-size: 1.2vw;
+  font-weight: bold;
+  padding: 2px;
+  width: 7vw;
+}
