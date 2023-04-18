@@ -1,77 +1,79 @@
-export const vehicleParts = [
+const vehicleParts = [
   {
     partId: 1, 
     partValue: 267, 
-    partName: "Pistão"
+    partName: 'Pistão',
   },
   {
     partId: 2, 
     partValue: 486, 
-    partName: "Embreagem"
+    partName: 'Embreagem',
   },
   {
     partId: 3, 
     partValue: 531, 
-    partName: "Rolamento"
+    partName: 'Rolamento',
   },
   {
     partId: 4, 
     partValue: 687, 
-    partName: "Radiador"
+    partName: 'Radiador',
   },
   {
     partId: 5, 
     partValue: 926, 
-    partName: "Junta do cabeçote"
+    partName: 'Junta do cabeçote',
   },
   {
     partId: 6, 
     partValue: 369, 
-    partName: "Correia dentada"
+    partName: 'Correia dentada',
   },
   {
     partId: 7, 
     partValue: 33, 
-    partName: "Vela de ignição"
+    partName: 'Vela de ignição',
   },
   {
     partId: 8, 
     partValue: 881, 
-    partName: "Bomba de combustível"
+    partName: 'Bomba de combustível',
   },
   {
     partId: 9, 
     partValue: 437, 
-    partName: "Sensor de temperatura"
+    partName: 'Sensor de temperatura',
   },
   {
     partId: 10,
     partValue: 277, 
-    partName: "Catalisador"
+    partName: 'Catalisador',
   },
   {
     partId: 11,
     partValue: 706, 
-    partName: "Termostato"
+    partName: 'Termostato',
   },
   {
     partId: 12,
     partValue: 641, 
-    partName: "Filtro de ar"
+    partName: 'Filtro de ar',
   },
   {
     partId: 13,
     partValue: 746, 
-    partName: "Interruptor de luz de freio"
+    partName: 'Interruptor de luz de freio',
   },
   {
     partId: 14,
     partValue: 125, 
-    partName: "Sonda lambda"
+    partName: 'Sonda lambda',
   },
   {
     partId: 15,
     partValue: 24, 
-    partName: "Amortecedor"
-  }
+    partName: 'Amortecedor',
+  },
 ];
+
+export default vehicleParts;

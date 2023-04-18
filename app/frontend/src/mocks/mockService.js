@@ -1,4 +1,4 @@
-export const services = [
+const services = [
   {
     customerName: 'Rogerio Lima',
     customerCPF: '111.222.333-44',
@@ -6,7 +6,7 @@ export const services = [
     vehicleColor: 'Vermelho',
     vehiclePlate: 'RGX-9874',
     employeeName: 'Marcia',
-    employeeCode: '22'
+    employeeCode: '22',
   },
   {
     customerName: 'Juliana Flores',
@@ -15,7 +15,7 @@ export const services = [
     vehicleColor: 'Azul',
     vehiclePlate: 'HCC-1122',
     employeeName: 'Izabela',
-    employeeCode: '66'
+    employeeCode: '66',
   },
   {
     customerName: 'Francisco Pereira',
@@ -24,7 +24,7 @@ export const services = [
     vehicleColor: 'Preto',
     vehiclePlate: 'ABC-1234',
     employeeName: 'Milton',
-    employeeCode: '18'
+    employeeCode: '18',
   },
   {
     customerName: 'Amanda Neves',
@@ -33,6 +33,8 @@ export const services = [
     vehicleColor: 'Branco',
     vehiclePlate: 'GST-9988',
     employeeName: 'Matheus',
-    employeeCode: '50'
-  }
+    employeeCode: '50',
+  },
 ];
+
+export default services;

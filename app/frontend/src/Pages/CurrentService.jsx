@@ -1,7 +1,7 @@
-import React from "react";
-import Header from "../Components/Header";
-import { services } from "../mocks/mockService"
-import { vehicleParts } from "../mocks/mockParts";
+import React from 'react';
+import Header from '../Components/Header.jsx';
+import services from '../mocks/mockService';
+import vehicleParts from '../mocks/mockParts';
 
 class CurrentService extends React.Component {
   constructor() {
@@ -20,7 +20,7 @@ class CurrentService extends React.Component {
       taskValue: 0,
       tasksConclued: [],
       totalValue: 0,
-    }
+    };
   }
 
   componentDidMount() {
@@ -44,7 +44,7 @@ class CurrentService extends React.Component {
 
   selectorChange = ({ target }) => {
     const { value } = target;
-    if(value !== 'null') {
+    if (value !== 'null') {
       this.setState({
         partSelectedId: value,
         partSelectedName: vehicleParts[value - 1].partName,
@@ -73,9 +73,10 @@ class CurrentService extends React.Component {
   endService = () => {
     console.log(this.state, new Date().toLocaleString());
     setTimeout(() => {
-      window.location.replace('/')
-    }, 5000)
-  } 
+      window.location.replace('/');
+    }, 5000);
+  };
+
   render() {
     const {
       customerName,
@@ -90,7 +91,7 @@ class CurrentService extends React.Component {
       taskDescription,
       taskValue,
       totalValue,
-      tasksConclued
+      tasksConclued,
     } = this.state;
     return (
       <main>
@@ -109,39 +110,41 @@ class CurrentService extends React.Component {
         </div>
         <div>
           <select 
-            name="partSelectedId" 
-            id="partSelectedId"
+            name='partSelectedId' 
+            id='partSelectedId'
             onChange={ this.selectorChange }
           >
-            <option value="null">Apenas mão de obra</option>
+            <option value='null'>Apenas mão de obra</option>
             {
               vehicleParts.map(({ partId, partName }) => (
                 <option key={ partId } value={partId}>{partName}</option>
               ))
-          }
+            }
 
           </select>
 
-          <label htmlFor="taskDescription">Descrição:</label>
+          <label htmlFor='taskDescription'>Descrição:</label>
           <textarea
-            name="taskDescription"
-            id="taskDescription"
+            name='taskDescription'
+            id='taskDescription'
             value={ taskDescription }
             onChange={ this.handleChange }
           />
 
-          <label htmlFor="taskValue">Valor:</label>
+          <label htmlFor='taskValue'>Valor:</label>
           <input
-            type="number"
-            name="taskValue"
-            id="taskValue"
+            type='number'
+            name='taskValue'
+            id='taskValue'
             value={ taskValue }
             onChange={ this.handleChange }
           />
 
-
           <button
-            onClick={ () => this.addConcluedTask({ partSelectedId, taskDescription, taskValue, partSelectedName }) }
+            onClick={ 
+              () => this.addConcluedTask(
+                { partSelectedId, taskDescription, taskValue, partSelectedName },
+                )}
             >
             Incluir
           </button>

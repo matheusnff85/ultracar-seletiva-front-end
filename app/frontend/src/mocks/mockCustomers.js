@@ -1,4 +1,4 @@
-export const customers = [
+const customers = [
   {
     customerName: 'Rogerio Lima',
     customerCPF: '111.222.333-44',
@@ -6,7 +6,7 @@ export const customers = [
     customerEmail: 'rogerio.lima@gmail.com',
     vehicleModel: 'Mercedes-Benz GLS 2020',
     vehicleColor: 'Vermelho',
-    vehiclePlate: 'RGX-9874'
+    vehiclePlate: 'RGX-9874',
   },
   {
     customerName: 'Juliana Flores',
@@ -15,7 +15,7 @@ export const customers = [
     customerEmail: 'flores.juliana@hotmail.com',
     vehicleModel: 'BMW X1 2023',
     vehicleColor: 'Azul',
-    vehiclePlate: 'HCC-1122'
+    vehiclePlate: 'HCC-1122',
   },
   {
     customerName: 'Francisco Pereira',
@@ -24,7 +24,7 @@ export const customers = [
     customerEmail: 'fran.pereira@ig.com.br',
     vehicleModel: 'Jeep Renegade 2018',
     vehicleColor: 'Preto',
-    vehiclePlate: 'ABC-1234'
+    vehiclePlate: 'ABC-1234',
   },
   {
     customerName: 'Amanda Neves',
@@ -33,6 +33,8 @@ export const customers = [
     customerEmail: 'amanda.neves@gmail.com',
     vehicleModel: 'Ford Ka 2020',
     vehicleColor: 'Branco',
-    vehiclePlate: 'GST-9988'
-  }
+    vehiclePlate: 'GST-9988',
+  },
 ];
+
+export default customers;

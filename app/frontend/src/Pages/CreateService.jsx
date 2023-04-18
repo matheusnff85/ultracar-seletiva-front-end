@@ -1,7 +1,7 @@
-import React from "react";
-import Header from "../Components/Header";
-import qrcode from "../images/qrcode.svg";
-import { customers } from "../mocks/mockCustomers";
+import React from 'react';
+import Header from '../Components/Header.jsx';
+import qrcode from '../images/qrcode.svg';
+import customers from '../mocks/mockCustomers';
 
 class CreateService extends React.Component {
   constructor() {
@@ -17,7 +17,7 @@ class CreateService extends React.Component {
       employeeName: '',
       employeeCode: '',
       isQrCodeHidden: false,
-    }
+    };
   }
   
   componentDidMount() {
@@ -33,7 +33,7 @@ class CreateService extends React.Component {
         vehiclePlate: customerInfos.vehiclePlate,
         isQrCodeHidden: true,
       });
-    }, 5000)
+    }, 5000);
   }
 
   handleChange = ({ target }) => {
@@ -49,8 +49,8 @@ class CreateService extends React.Component {
     };
     simulateRequest();
     setTimeout(() => {
-      window.location.replace(`/service/${vehiclePlate}`)
-    }, 5000)
+      window.location.replace(`/service/${vehiclePlate}`);
+    }, 5000);
   };
 
   render() {
@@ -64,49 +64,49 @@ class CreateService extends React.Component {
       vehiclePlate,
       employeeName,
       employeeCode,
-      isQrCodeHidden
+      isQrCodeHidden,
     } = this.state;
     return (
       <main>
         <Header />
-        <img src={ qrcode } hidden={ isQrCodeHidden } alt="qrcode para informações do cliente" />
+        <img src={ qrcode } hidden={ isQrCodeHidden } alt='qrcode para informações do cliente' />
         <h2>Preencha as informações abaixo</h2>
         <form>
           <fieldset>
             <legend>Dados do Cliente</legend>
 
-            <label htmlFor="customerName" >Nome:</label>
+            <label htmlFor='customerName' >Nome:</label>
             <input 
-              type="text" 
-              name="customerName" 
-              id="customerName"
+              type='text' 
+              name='customerName' 
+              id='customerName'
               value={ customerName }
               onChange={ this.handleChange }
             />
 
-            <label htmlFor="customerCPF" >CPF:</label>
+            <label htmlFor='customerCPF' >CPF:</label>
             <input 
-              type="text" 
-              name="customerCPF" 
-              id="customerCPF"
+              type='text' 
+              name='customerCPF' 
+              id='customerCPF'
               value={ customerCPF }
               onChange={ this.handleChange }
             />
 
-            <label htmlFor="customerPhone" >Telefone:</label>
+            <label htmlFor='customerPhone' >Telefone:</label>
             <input 
-              type="text"
-              name="customerPhone" 
-              id="customerPhone"
+              type='text'
+              name='customerPhone' 
+              id='customerPhone'
               value={ customerPhone }
               onChange={ this.handleChange }
             />
 
-            <label htmlFor="customerEmail" >Email:</label>
+            <label htmlFor='customerEmail' >Email:</label>
             <input 
-              type="text" 
-              name="customerEmail" 
-              id="customerEmail"
+              type='text' 
+              name='customerEmail' 
+              id='customerEmail'
               value={ customerEmail }
               onChange={ this.handleChange }
             />
@@ -115,29 +115,29 @@ class CreateService extends React.Component {
           <fieldset>
             <legend>Dados do Veículo</legend>
 
-            <label htmlFor="vehicleModel" >Modelo:</label>
+            <label htmlFor='vehicleModel' >Modelo:</label>
             <input 
-              type="text" 
-              name="vehicleModel" 
-              id="vehicleModel"
+              type='text' 
+              name='vehicleModel' 
+              id='vehicleModel'
               value={ vehicleModel }
               onChange={ this.handleChange }
             />
 
-            <label htmlFor="vehicleColor" >Cor:</label>
+            <label htmlFor='vehicleColor' >Cor:</label>
             <input 
-              type="text" 
-              name="vehicleColor" 
-              id="vehicleColor"
+              type='text' 
+              name='vehicleColor' 
+              id='vehicleColor'
               value={ vehicleColor }
               onChange={ this.handleChange }
             />
 
-            <label htmlFor="vehiclePlate" >Placa:</label>
+            <label htmlFor='vehiclePlate' >Placa:</label>
             <input 
-              type="text" 
-              name="vehiclePlate" 
-              id="vehiclePlate"
+              type='text' 
+              name='vehiclePlate' 
+              id='vehiclePlate'
               value={ vehiclePlate }
               onChange={ this.handleChange }
             />
@@ -146,27 +146,27 @@ class CreateService extends React.Component {
           <fieldset>
             <legend>Dados do Colaborador</legend>
 
-            <label htmlFor="employeeName" >Nome:</label>
+            <label htmlFor='employeeName' >Nome:</label>
             <input 
-              type="text" 
-              name="employeeName" 
-              id="employeeName"
+              type='text' 
+              name='employeeName' 
+              id='employeeName'
               value={ employeeName }
               onChange={ this.handleChange }
             />
 
-            <label htmlFor="employeeCode" >Codigo:</label>
+            <label htmlFor='employeeCode' >Codigo:</label>
             <input 
-              type="text" 
-              name="employeeCode" 
-              id="employeeCode"
+              type='text' 
+              name='employeeCode' 
+              id='employeeCode'
               value={ employeeCode }
               onChange={ this.handleChange }
             />
 
           </fieldset>
 
-          <button type="button" onClick={ this.startService }>Iniciar Serviço</button>
+          <button type='button' onClick={ this.startService }>Iniciar Serviço</button>
         </form>
       </main>
     );
