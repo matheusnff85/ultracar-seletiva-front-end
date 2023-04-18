@@ -31,6 +31,16 @@ class Manage extends React.Component {
     }
   };
 
+  removeService = (index) => {
+    const { allRegisteredServices, filteredServices } = this.state;
+    if (filteredServices.length > 0) {
+      filteredServices.splice(index, 1);
+    } else {
+      allRegisteredServices.splice(index, 1);
+    }
+    this.setState({ allRegisteredServices });
+  }
+
   buttonFilters = ({ target }) => {
     const { allRegisteredServices } = this.state;
     const { value } = target;
@@ -94,6 +104,7 @@ class Manage extends React.Component {
                     <td>
                       <button
                         className={ styled.manageRemoveButton }
+                        onClick={ () => this.removeService(index) }
                       >
                         Excluir
                       </button>

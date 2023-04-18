@@ -71,8 +71,15 @@ class CurrentService extends React.Component {
     });
   };
 
+  removeTask = (index) => {
+    const { tasksConclued, totalValue } = this.state;
+    const newTotal = Number(totalValue) - Number(tasksConclued[index].taskValue);
+    tasksConclued.splice(index, 1);
+    this.setState({ tasksConclued, totalValue: newTotal });
+  }
+
   endService = () => {
-    console.log(this.state, new Date().toLocaleString());
+    console.log(new Date().toLocaleString());
     setTimeout(() => {
       window.location.replace('/');
     }, 5000);
@@ -183,6 +190,7 @@ class CurrentService extends React.Component {
                   <td>
                     <button 
                       className={ styled.removeTaskButton }
+                      onClick={ () => this.removeTask(index) }
                     >
                       Excluir
                     </button>

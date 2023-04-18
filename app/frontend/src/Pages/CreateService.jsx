@@ -45,10 +45,7 @@ class CreateService extends React.Component {
 
   startService = () => {
     const { vehiclePlate } = this.state;
-    const simulateRequest = () => {
-      console.log(this.state);
-    };
-    simulateRequest();
+    console.log(new Date().toLocaleString());
     setTimeout(() => {
       window.location.replace(`/service/${vehiclePlate}`);
     }, 5000);
