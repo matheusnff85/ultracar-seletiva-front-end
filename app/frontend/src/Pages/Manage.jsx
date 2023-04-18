@@ -2,6 +2,7 @@ import React from 'react';
 import services from '../mocks/mockService';
 import employees from '../mocks/mockEmployees';
 import Header from '../Components/Header.jsx';
+import styled from '../Css/Manage.module.css';
 
 class Manage extends React.Component {
   constructor() {
@@ -49,7 +50,7 @@ class Manage extends React.Component {
     return (
       <main>
         <Header />
-        <section>
+        <div className={ styled.manageFiltersDiv }>
           <select name='employeeSelector' id='employeeSelector' onChange={ this.selectorChange }>
             <option value='all'>Todos</option>
             { allEmployees.map((employee, index) => (
@@ -59,8 +60,8 @@ class Manage extends React.Component {
           <button value='all' onClick={ this.buttonFilters }>Todos</button>
           <button value='in progress' onClick={ this.buttonFilters }>Em Andamento</button>
           <button value='finished' onClick={ this.buttonFilters }>Finalizados</button>
-        </section>
-        <table>
+        </div>
+        <table className={ styled.manageTableContainer }>
           <thead>
             <tr>
               <th>Funcionário</th>
@@ -71,7 +72,7 @@ class Manage extends React.Component {
               <th>Iniciado  em</th>
               <th>Terminado em</th>
               <th>Valor</th>
-              <th>Excluir</th>
+              <th>Remover</th>
             </tr>
           </thead>
           <tbody>
@@ -80,7 +81,7 @@ class Manage extends React.Component {
                 ? filteredServices : allRegisteredServices).map((service, index) => (
                   <tr key={ index }>
                     <td>{service.employeeName}</td>
-                    <th>{service.employeeCode}</th>
+                    <td>{service.employeeCode}</td>
                     <td>{service.vehicleModel}</td>
                     <td>{service.vehiclePlate}</td>
                     <td>{service.vehicleColor}</td>
@@ -90,7 +91,13 @@ class Manage extends React.Component {
                       {service.serviceValue
                         .toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                     </td>
-                    <td><button>Excluir</button></td>
+                    <td>
+                      <button
+                        className={ styled.manageRemoveButton }
+                      >
+                        Excluir
+                      </button>
+                    </td>
                   </tr>
                 ))
             }
