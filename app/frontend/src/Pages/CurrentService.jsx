@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Components/Header.jsx';
 import services from '../mocks/mockService';
 import vehicleParts from '../mocks/mockParts';
+import styled from '../Css/CurrentService.module.css';
 
 class CurrentService extends React.Component {
   constructor() {
@@ -96,9 +97,9 @@ class CurrentService extends React.Component {
     return (
       <main>
         <Header />
-        <div>
-          <h3>Informações</h3>
-          <ul>
+        <div className={ styled.currentServiceInfosDiv }>
+          <h3 className={ styled.customerInfosTitle }>Informações</h3>
+          <ul className={ styled.customerInfosList }>
             <li>Cliente: { customerName }</li>
             <li>CPF: { customerCPF }</li>
             <li>Modelo do veículo: { vehicleModel }</li>
@@ -108,49 +109,61 @@ class CurrentService extends React.Component {
             <li>Código: { employeeCode }</li>
           </ul>
         </div>
-        <div>
-          <select 
-            name='partSelectedId' 
-            id='partSelectedId'
-            onChange={ this.selectorChange }
-          >
-            <option value='null'>Apenas mão de obra</option>
-            {
-              vehicleParts.map(({ partId, partName }) => (
-                <option key={ partId } value={partId}>{partName}</option>
-              ))
-            }
-
-          </select>
-
-          <label htmlFor='taskDescription'>Descrição:</label>
-          <textarea
-            name='taskDescription'
-            id='taskDescription'
-            value={ taskDescription }
-            onChange={ this.handleChange }
-          />
-
-          <label htmlFor='taskValue'>Valor:</label>
-          <input
-            type='number'
-            name='taskValue'
-            id='taskValue'
-            value={ taskValue }
-            onChange={ this.handleChange }
-          />
-
-          <button
-            onClick={ 
-              () => this.addConcluedTask(
-                { partSelectedId, taskDescription, taskValue, partSelectedName },
-                )}
+        <div className={ styled.currentServiceTaskCreator }>
+          <div className={ styled.taskCreatorDiv }>
+            <select 
+              name='partSelectedId' 
+              id='partSelectedId'
+              onChange={ this.selectorChange }
+              className={ styled.taskCreatorSelect }
             >
-            Incluir
-          </button>
+              <option value='null'>Apenas mão de obra</option>
+              {
+                vehicleParts.map(({ partId, partName }) => (
+                  <option key={ partId } value={partId}>{partName}</option>
+                ))
+              }
+
+            </select>
+          </div>
+
+          <div className={ styled.taskCreatorDiv }>
+            <label htmlFor='taskDescription'>Descrição:</label>
+            <textarea
+              name='taskDescription'
+              id='taskDescription'
+              value={ taskDescription }
+              onChange={ this.handleChange }
+              className={ styled.taskCreatorTextarea }
+              maxLength='60'
+            />
+          </div>
+
+          <div className={ styled.taskCreatorDiv }>
+            <label htmlFor='taskValue'>Valor:</label>
+            <input
+              type='number'
+              name='taskValue'
+              id='taskValue'
+              value={ taskValue }
+              onChange={ this.handleChange }
+              className={ styled.taskCreatorValueInput }
+            />
+          </div>
+
+          <div className={ styled.taskCreatorDiv }>
+            <button
+              className={ styled.taskCreatorButton }
+              onClick={ 
+                () => this.addConcluedTask(
+                  { partSelectedId, taskDescription, taskValue, partSelectedName },
+                  )}
+              >
+              Incluir
+            </button>
+          </div>
         </div>
-        <h2>Total: { totalValue }</h2>
-        <table>
+        <table className={ styled.currentServiceTableContainer }>
           <thead>
             <tr>
               <th>Peça</th>
@@ -167,18 +180,30 @@ class CurrentService extends React.Component {
                   <td>{ task.partSelectedName }</td>
                   <td>{ task.taskDescription }</td>
                   <td>{ `R$ ${task.taskValue}` }</td>
-                  <td><button>Remover</button></td>
+                  <td>
+                    <button 
+                      className={ styled.removeTaskButton }
+                    >
+                      Excluir
+                    </button>
+                  </td>
                 </tr>
                 ))
               )
             }
           </tbody>
         </table>
-        <button
-          onClick={ this.endService }
-        >
-          Finalizar Serviço
-        </button>
+        <h2 className={ styled.currentServiceTotalValue }>
+          Total: { totalValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }
+        </h2>
+        <div className={ styled.endServiceButtonDiv }>
+          <button
+            onClick={ this.endService }
+            className={ styled.endServiceButton }
+          >
+            Finalizar Serviço
+          </button>
+        </div>
       </main>
     );
   }
