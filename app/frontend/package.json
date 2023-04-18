@@ -37,7 +37,5 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.38.0",
-    "eslint-config-trybe-fundamentals": "^1.1.1"
   }
 }
