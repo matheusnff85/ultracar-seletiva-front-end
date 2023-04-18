@@ -19,7 +19,7 @@ class CreateService extends React.Component {
       isQrCodeHidden: false,
     };
   }
-  
+
   componentDidMount() {
     const customerInfos = customers[Math.floor(Math.random() * customers.length)];
     setTimeout(() => {

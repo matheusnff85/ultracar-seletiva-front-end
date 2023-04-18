@@ -7,7 +7,7 @@ class Home extends React.Component {
       <main>
         <h2>HOME PAGE</h2>
         <Link to={ '/service' } >Criar Novo Serviço</Link>
-        <Link to={ '/' } >Gerenciar Serviços</Link>
+        <Link to={ '/manage' } >Gerenciar Serviços</Link>
       </main>
     );
   }
