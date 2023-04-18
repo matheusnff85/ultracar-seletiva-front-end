@@ -1,0 +1,20 @@
+version: '3.0'
+services:
+  frontend:
+    container_name: app_frontend
+    build: ./frontend
+    volumes:
+      - ./frontend:/app-frontend/
+    ports:
+      - 3000:3000
+    working_dir: /app-frontend
+    command: npm start
+    # depends_on:
+    #   backend:
+    #     condition: service_healthy
+    # Os `healthcheck` devem garantir que a aplicação está operacional, antes de liberar o container.
+    healthcheck:
+      test: ['CMD', 'lsof', '-t', '-i:3000'] # Caso utilize outra porta interna para o front, altere ela aqui também.
+      timeout: 10s
+      retries: 5
+
